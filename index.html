@@ -426,7 +426,7 @@
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        if (user.email !== 'aromabakery.ainim@gmail.com' || !user.emailVerified) {
+        if (user.email !== 'aromabakery.aimin@gmail.com' || !user.emailVerified) {
           window.showSystemAlert('權限錯誤：此端點僅限官方授權管理員專用。', () => { signOut(auth); });
           return;
         }
@@ -830,7 +830,7 @@
     window.handleAdminLogin = function() {
       signInWithPopup(auth, googleProvider).catch((error) => {
         console.error('Admin Google sign-in failed:', error);
-        window.showSystemAlert('Google 登入失敗：' + (error.code || 'unknown') + '\n' + (error.message || '請檢查 Firebase Authentication 設定。'));
+        window.showSystemAlert('Google 登入失敗，請確認已啟用 Google 登入及授權網域設定。');
       });
     };
     window.handleAdminLogout = function() {
